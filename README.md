@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- 顶部动态波浪渐变 Header (A+B结合) -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,24,35&height=220&section=header&text=TheEarlyWinter&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=%E2%9C%A7%20Exploring%20the%20Boundaries%20of%20AI%20Agents%20%26%20Rust%20%E2%9C%A7&descAlignY=62&descSize=18&descAlign=50" width="100%"/>
+<!-- 顶部原生动态波浪渐变 Header (自托管零裂图) -->
+<img src="./assets/header.svg" width="100%"/>
 
 <!-- 二次元打字机动态 Slogan -->
 <a href="https://github.com/TheEarlyWinter">
@@ -86,8 +86,8 @@ current_journey: "Deepening agent orchestration & context engineering."
 
 <div align="center">
 
-<!-- 底部优雅波浪收尾 -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=35,24,12&height=100&section=footer" width="100%"/>
+<!-- 底部优雅波浪收尾 (自托管零裂图) -->
+<img src="./assets/footer.svg" width="100%"/>
 
 <sub>✨ <i>"Stay curious, keep building."</i> ✨</sub>
 

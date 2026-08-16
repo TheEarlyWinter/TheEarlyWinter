@@ -1,0 +1,23 @@
+<svg
+  width="100%"
+  height="90"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 854 90"
+>
+  <defs>
+    <linearGradient id="footer-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#313244"/>
+      <stop offset="50%" stop-color="#b4befe"/>
+      <stop offset="100%" stop-color="#cba6f7"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 45 Q 213.5 0, 427 45 T 854 45 L 854 90 L 0 90 Z" fill="url(#footer-grad)" opacity="0.75">
+    <animate
+      attributeName="d"
+      dur="12s"
+      repeatCount="indefinite"
+      keyTimes="0;0.5;1"
+      values="M0 45 Q 213.5 0, 427 45 T 854 45 L 854 90 L 0 90 Z; M0 45 Q 213.5 80, 427 45 T 854 45 L 854 90 L 0 90 Z; M0 45 Q 213.5 0, 427 45 T 854 45 L 854 90 L 0 90 Z"
+    />
+  </path>
+</svg>

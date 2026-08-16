@@ -1,0 +1,83 @@
+<svg
+  width="100%"
+  height="220"
+  xmlns="http://www.w3.org/2000/svg"
+  style="z-index:1;position:relative"
+  viewBox="0 0 854 220"
+>
+  <style>
+    .text {
+      font-size: 58px;
+      font-weight: 800;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      fill: #ffffff;
+      letter-spacing: 2px;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+    .desc {
+      font-size: 16px;
+      font-weight: 500;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      fill: #f5c2e7;
+      letter-spacing: 3px;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <defs>
+    <linearGradient id="gradient-wave" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#313244"/>
+      <stop offset="40%" stop-color="#585b70"/>
+      <stop offset="70%" stop-color="#b4befe"/>
+      <stop offset="100%" stop-color="#cba6f7"/>
+    </linearGradient>
+    <linearGradient id="wave-layer-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cba6f7" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#f5c2e7" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#89b4fa" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="wave-layer-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="50%" stop-color="#313244"/>
+      <stop offset="100%" stop-color="#45475a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <path d="M0 0 L854 0 L854 160 Q640 210 427 165 T0 170 Z" fill="url(#wave-layer-2)" />
+
+  <!-- Animated Wave Layers -->
+  <g>
+    <path fill="url(#wave-layer-1)" opacity="0.7">
+      <animate
+        attributeName="d"
+        dur="16s"
+        repeatCount="indefinite"
+        keyTimes="0;0.333;0.667;1"
+        calcMode="spline"
+        keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
+        begin="0s"
+        values="M0 0L 0 140Q 213.5 180 427 150T 854 175L 854 0 Z;M0 0L 0 165Q 213.5 180 427 160T 854 150L 854 0 Z;M0 0L 0 185Q 213.5 155 427 185T 854 150L 854 0 Z;M0 0L 0 140Q 213.5 180 427 150T 854 175L 854 0 Z"
+      />
+    </path>
+    <path fill="url(#gradient-wave)" opacity="0.5">
+      <animate
+        attributeName="d"
+        dur="16s"
+        repeatCount="indefinite"
+        keyTimes="0;0.333;0.667;1"
+        calcMode="spline"
+        keySplines="0.2 0 0.2 1;0.2 0 0.2 1;0.2 0 0.2 1"
+        begin="-8s"
+        values="M0 0L 0 155Q 213.5 200 427 170T 854 180L 854 0 Z;M0 0L 0 170Q 213.5 140 427 140T 854 160L 854 0 Z;M0 0L 0 165Q 213.5 145 427 170T 854 185L 854 0 Z;M0 0L 0 155Q 213.5 200 427 170T 854 180L 854 0 Z"
+      />
+    </path>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <text text-anchor="middle" dominant-baseline="middle" x="50%" y="38%" class="text">TheEarlyWinter</text>
+  <text text-anchor="middle" dominant-baseline="middle" x="50%" y="64%" class="desc">✧ EXPLORING AI AGENTS &amp; RUST ECOSYSTEM ✧</text>
+</svg>
