@@ -77,8 +77,8 @@ current_journey: "Deepening agent orchestration & context engineering."
 
 <div align="center">
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=TheEarlyWinter&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4&icon_color=F5C2E7" height="165" alt="GitHub Stats" />
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=TheEarlyWinter&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4" height="165" alt="Top Langs" />
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=TheEarlyWinter&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4&icon_color=F5C2E7" height="165" alt="GitHub Stats" />
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=TheEarlyWinter&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4" height="165" alt="Top Langs" />
 
 </div>
 
