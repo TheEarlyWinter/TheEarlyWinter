@@ -37,6 +37,7 @@ current_journey: "Deepening agent orchestration & context engineering."
 | 📊 **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JavaScript` | HanaAgent Token 用量统计插件：消费明细、模型占比、余额查询与官方账单口径。 |
 | 🎯 **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JavaScript` | HanaAgent 子代理模型选择与智能分流插件。 |
 | 🔌 **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | Origin MCP 部署套件，支持 HanaAgent / OpenHanako 与科学绘图桥接。 |
+| 🧪 **[summary](https://github.com/TheEarlyWinter/summary)** | `Python` | 化学/化工实验工作总结生成与 Word 自动排版技能 (/summary)。 |
 | 🔍 **[chemeng-literature-search](https://github.com/TheEarlyWinter/chemeng-literature-search)** | `Python` | 化学工程与技术领域文献检索、证据审计与 DOI 核验 Skill。 |
 | 🌐 **[twinkstar-web-access](https://github.com/TheEarlyWinter/twinkstar-web-access)** | `JavaScript` | Token 保护的 Twinkstar Browser CDP 浏览器接入插件。 |
 | 📄 **[word-preview](https://github.com/TheEarlyWinter/word-preview)** | `JavaScript` | 轻量级 Word (.docx) 文档在线/卡片式解析与快速预览工具。 |
