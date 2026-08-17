@@ -45,6 +45,7 @@ current_journey: "Deepening agent orchestration & context engineering."
 #### 🤖 「赛博工坊与工具」/ AI & Utilities
 | 项目 | 语言 | 简介 |
 | :--- | :---: | :--- |
+| 🌐 **[cloudflare-tunnel-ingress-guide](https://github.com/TheEarlyWinter/cloudflare-tunnel-ingress-guide)** | `Docs` | 通用 Cloudflare Named Tunnel 零信任穿透与智能分流架构指南。 |
 | 🎛️ **[dsh-skill-manager](https://github.com/TheEarlyWinter/dsh-skill-manager)** | `JavaScript` | DeepSeek Harness (dsh) Web GUI 纯技能与 Bundle 管理器。 |
 | 📺 **[bilibili-ai-bot](https://github.com/TheEarlyWinter/bilibili-ai-bot)** | `Python` | 哔哩哔哩 AI 自动化交互与内容处理机器人。 |
 | ⚡ **[sub2api](https://github.com/TheEarlyWinter/sub2api)** | `Go` | 一站式开源中转服务，统一接入主流大模型订阅。 |
