@@ -33,11 +33,13 @@ current_journey: "Deepening agent orchestration & context engineering."
 #### 🌿 「智能体工坊」/ HanaAgent Ecosystem & Plugins
 | 项目 | 语言 | 简介 |
 | :--- | :---: | :--- |
+| 🌟 **[gemini-quota-dashboard](https://github.com/TheEarlyWinter/gemini-quota-dashboard)** | `JavaScript` | Google Gemini 5小时滑动窗口与周配额多账号实时监控看板。 |
 | 📊 **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JavaScript` | HanaAgent Token 用量统计插件：消费明细、模型占比、余额查询与官方账单口径。 |
 | 🎯 **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JavaScript` | HanaAgent 子代理模型选择与智能分流插件。 |
 | 🔌 **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | Origin MCP 部署套件，支持 HanaAgent / OpenHanako 与科学绘图桥接。 |
 | 🔍 **[chemeng-literature-search](https://github.com/TheEarlyWinter/chemeng-literature-search)** | `Python` | 化学工程与技术领域文献检索、证据审计与 DOI 核验 Skill。 |
 | 🌐 **[twinkstar-web-access](https://github.com/TheEarlyWinter/twinkstar-web-access)** | `JavaScript` | Token 保护的 Twinkstar Browser CDP 浏览器接入插件。 |
+| 📄 **[word-preview](https://github.com/TheEarlyWinter/word-preview)** | `JavaScript` | 轻量级 Word (.docx) 文档在线/卡片式解析与快速预览工具。 |
 | 📖 **[hanako-user-manual](https://github.com/TheEarlyWinter/hanako-user-manual)** | `Docs` | HanaAgent / OpenHanako 实用中文用户指南与知识沉淀。 |
 
 #### 🤖 「赛博工坊与工具」/ AI & Utilities
@@ -80,6 +82,18 @@ current_journey: "Deepening agent orchestration & context engineering."
 <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=TheEarlyWinter&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4&icon_color=F5C2E7" height="165" alt="GitHub Stats" />
 <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=TheEarlyWinter&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=0D1117&title_color=CBA6F7&text_color=CDD6F4" height="165" alt="Top Langs" />
 
+</div>
+
+---
+
+### 🐍 Contribution Activity / 绿点贪吃蛇
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TheEarlyWinter/TheEarlyWinter/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/TheEarlyWinter/TheEarlyWinter/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/TheEarlyWinter/TheEarlyWinter/output/github-contribution-grid-snake.svg">
+  </picture>
 </div>
 
 ---
