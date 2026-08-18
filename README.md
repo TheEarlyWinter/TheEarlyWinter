@@ -23,6 +23,14 @@ current_journey: "Deepening agent orchestration & context engineering."
 
 ---
 
+### 🌸 初冬的花笺工坊 / The Early Winter's Atelier
+
+<div align="center">
+  <img src="./assets/atelier-card.svg" width="100%" alt="The Early Winter's Atelier" />
+</div>
+
+---
+
 ### 🌟 Featured Projects / 核心项目矩阵
 
 #### 🌸 「花笺与桌面之物」/ Desktop & Utilities

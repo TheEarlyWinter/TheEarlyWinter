@@ -1,0 +1,332 @@
+/**
+ * scripts/generate-atelier.js
+ * 初冬的花笺工坊 · 动态 SVG 生成引擎
+ * 
+ * 具备 GraphQL + REST 双模引擎：
+ * - 在 GitHub Actions 中自动利用 GITHUB_TOKEN 走 GraphQL 获取全量元数据
+ * - 在本地无 Token 环境下自动降级走 REST API，确保无论在何处都能 100% 成功生成
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const USERNAME = 'TheEarlyWinter';
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
+async function fetchFromGraphQL() {
+  const query = `
+    query($login: String!) {
+      user(login: $login) {
+        repositories(first: 100, ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC) {
+          nodes {
+            name
+            description
+            stargazerCount
+            forkCount
+            primaryLanguage { name color }
+            updatedAt
+            pushedAt
+            releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+              nodes { tagName name publishedAt }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const response = await fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'User-Agent': 'TheEarlyWinter-Atelier-Bot',
+      'Authorization': `Bearer ${GITHUB_TOKEN}`,
+    },
+    body: JSON.stringify({ query, variables: { login: USERNAME } }),
+  });
+
+  const json = await response.json();
+  if (!json.data || !json.data.user) {
+    throw new Error(`GraphQL Error: ${JSON.stringify(json)}`);
+  }
+  return json.data.user.repositories.nodes;
+}
+
+async function fetchFromRest() {
+  const response = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&type=owner`, {
+    headers: {
+      'User-Agent': 'TheEarlyWinter-Atelier-Bot',
+      'Accept': 'application/vnd.github.v3+json',
+      ...(GITHUB_TOKEN ? { 'Authorization': `Bearer ${GITHUB_TOKEN}` } : {})
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`REST API error: ${response.status} ${response.statusText}`);
+  }
+
+  const list = await response.json();
+  return list.map(repo => ({
+    name: repo.name,
+    description: repo.description,
+    stargazerCount: repo.stargazers_count,
+    forkCount: repo.forks_count,
+    primaryLanguage: repo.language ? { name: repo.language } : null,
+    updatedAt: repo.updated_at,
+    pushedAt: repo.pushed_at,
+    releases: { nodes: [] }
+  }));
+}
+
+async function getRepositories() {
+  if (GITHUB_TOKEN) {
+    try {
+      console.log('🔮 Fetching repository metadata via GraphQL API...');
+      return await fetchFromGraphQL();
+    } catch (e) {
+      console.warn('⚠️ GraphQL fetch failed, falling back to REST API:', e.message);
+    }
+  }
+  console.log('🌿 Fetching repository metadata via REST API...');
+  return await fetchFromRest();
+}
+
+function buildSvg(stats) {
+  const { totalStars, totalForks, repoCount, latestSpark, generatedAt } = stats;
+
+  return `<svg width="860" height="440" viewBox="0 0 860 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>初冬的花笺工坊 · The Early Winter's Atelier</title>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(2deg); }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.75; }
+      80% { opacity: 0.6; }
+      100% { transform: translate(65px, 95px) rotate(80deg); opacity: 0; }
+    }
+
+    /* 默认 / 深色模式 */
+    .bg { fill: #161426; }
+    .card-bg { fill: #1f1b33; stroke: #393257; stroke-width: 1; }
+    .inner-card { fill: #262140; stroke: #453c69; stroke-width: 1; }
+    .text-title { fill: #fdf2f8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Serif SC", serif; font-weight: 600; font-size: 19px; }
+    .text-subtitle { fill: #c4b5fd; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 12.5px; font-style: italic; }
+    .text-card-title { fill: #fbcfe8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; }
+    .text-body { fill: #ddd6fe; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11.5px; }
+    .text-muted { fill: #9ca3af; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; }
+    .tag-bg { fill: #312a4f; stroke: #4e4275; }
+    .tag-text { fill: #e9d5ff; font-family: "JetBrains Mono", monospace; font-size: 10.5px; }
+    .badge-bg { fill: rgba(244, 114, 182, 0.15); stroke: #f472b6; stroke-width: 0.8; }
+    .badge-text { fill: #f472b6; font-size: 11px; font-weight: 500; font-family: sans-serif; }
+    .star-sparkle { fill: #fef08a; transform-box: fill-box; transform-origin: center; animation: twinkle 3s ease-in-out infinite; }
+    .floating-petal { fill: #f472b6; }
+
+    /* 浅色模式自适应 */
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #fffafd; }
+      .card-bg { fill: #ffffff; stroke: #f3d8e6; stroke-width: 1; }
+      .inner-card { fill: #fdf2f8; stroke: #fad3e7; stroke-width: 1; }
+      .text-title { fill: #831843; }
+      .text-subtitle { fill: #9d174d; }
+      .text-card-title { fill: #9d174d; }
+      .text-body { fill: #4c0519; }
+      .text-muted { fill: #9ca3af; }
+      .tag-bg { fill: #ffffff; stroke: #fbcfe8; }
+      .tag-text { fill: #be185d; }
+      .badge-bg { fill: #fce7f3; stroke: #ec4899; }
+      .badge-text { fill: #db2777; }
+    }
+  </style>
+
+  <rect width="860" height="440" rx="16" class="bg"/>
+  <rect x="12" y="12" width="836" height="416" rx="12" class="card-bg"/>
+
+  <!-- 飘落的初冬落樱/星芒微光 -->
+  <g>
+    <circle cx="90" cy="45" r="2.5" class="floating-petal" style="animation: drift 7s linear infinite;" />
+    <circle cx="360" cy="25" r="2" class="floating-petal" style="animation: drift 9s linear 2.5s infinite;" />
+    <circle cx="710" cy="70" r="2.5" class="floating-petal" style="animation: drift 8s linear 1.2s infinite;" />
+    <polygon points="790,38 793,44 799,47 793,50 790,56 787,50 781,47 787,44" class="star-sparkle" style="animation-delay: 0.3s;" />
+    <polygon points="110,390 112,394 116,396 112,398 110,402 108,398 104,396 108,394" class="star-sparkle" style="animation-delay: 1.8s;" />
+  </g>
+
+  <!-- 头部：手帐工坊抬头与印章 -->
+  <g transform="translate(32, 28)">
+    <text x="0" y="24" class="text-title">🌸 初冬的花笺工坊 · The Early Winter</text>
+    <text x="0" y="46" class="text-subtitle">"Crafting useful, lightweight, and reliable tools."</text>
+    
+    <!-- 右上角工坊印章 -->
+    <g transform="translate(640, 4)">
+      <rect x="0" y="0" width="132" height="26" rx="13" class="badge-bg"/>
+      <text x="66" y="17" text-anchor="middle" class="badge-text">✨ Atelier Active</text>
+    </g>
+  </g>
+
+  <!-- 中间三大操作台卡片 -->
+  <g transform="translate(32, 100)">
+    
+    <!-- 卡片 1: 花笺与桌面之物 -->
+    <g transform="translate(0, 0)">
+      <rect width="252" height="226" rx="10" class="inner-card"/>
+      <text x="16" y="28" class="text-card-title">🌸 花笺与桌面之物</text>
+      <text x="16" y="48" class="text-muted">Rust / Local-First / Notes</text>
+      <text x="16" y="74" class="text-body">本地 Markdown 笔记与双向链接</text>
+      <text x="16" y="92" class="text-body">轻量卡片式文档与桌面之物</text>
+      
+      <!-- 项目标签 -->
+      <g transform="translate(16, 118)">
+        <rect width="102" height="24" rx="6" class="tag-bg"/>
+        <text x="8" y="16" class="tag-text">floral-notepaper</text>
+      </g>
+      <g transform="translate(126, 118)">
+        <rect width="90" height="24" rx="6" class="tag-bg"/>
+        <text x="8" y="16" class="tag-text">word-preview</text>
+      </g>
+      
+      <g transform="translate(16, 184)">
+        <text x="0" y="14" class="text-muted">🦀 Rust Engine · 极简本地便笺</text>
+      </g>
+    </g>
+
+    <!-- 卡片 2: 智能体魔法工坊 -->
+    <g transform="translate(272, 0)">
+      <rect width="252" height="226" rx="10" class="inner-card"/>
+      <text x="16" y="28" class="text-card-title">🔮 智能体魔法工坊</text>
+      <text x="16" y="48" class="text-muted">Agent / Mesh / Telemetry</text>
+      <text x="16" y="74" class="text-body">子代理智能分流与模型调度</text>
+      <text x="16" y="92" class="text-body">滑动窗口配额监控与 Token 治理</text>
+      
+      <!-- 项目标签 -->
+      <g transform="translate(16, 114)">
+        <rect width="112" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">subagent-picker</text>
+      </g>
+      <g transform="translate(136, 114)">
+        <rect width="98" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">gemini-quota</text>
+      </g>
+      <g transform="translate(16, 142)">
+        <rect width="96" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">token-tracker</text>
+      </g>
+      <g transform="translate(120, 142)">
+        <rect width="114" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">twinkstar-access</text>
+      </g>
+
+      <g transform="translate(16, 196)">
+        <text x="0" y="14" class="text-muted">💫 HanaAgent Ecosystem</text>
+      </g>
+    </g>
+
+    <!-- 卡片 3: 炼金与科学基座 -->
+    <g transform="translate(544, 0)">
+      <rect width="252" height="226" rx="10" class="inner-card"/>
+      <text x="16" y="28" class="text-card-title">🧪 炼金与科学基座</text>
+      <text x="16" y="48" class="text-muted">Sci / Chemistry / Ingress</text>
+      <text x="16" y="74" class="text-body">化工文献检索与证据链审计</text>
+      <text x="16" y="92" class="text-body">实验总结生成与 Origin 桥接</text>
+      
+      <!-- 项目标签 -->
+      <g transform="translate(16, 114)">
+        <rect width="102" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">chemeng-search</text>
+      </g>
+      <g transform="translate(126, 114)">
+        <rect width="70" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">summary</text>
+      </g>
+      <g transform="translate(16, 142)">
+        <rect width="84" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">origin-mcp</text>
+      </g>
+      <g transform="translate(108, 142)">
+        <rect width="68" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">sub2api</text>
+      </g>
+
+      <g transform="translate(16, 196)">
+        <text x="0" y="14" class="text-muted">⚡ Tunnel &amp; Research Chain</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- 底部数据遥测指示条 -->
+  <g transform="translate(32, 352)">
+    <line x1="0" y1="0" x2="796" y2="0" stroke="#393257" stroke-width="0.8" opacity="0.6"/>
+    
+    <!-- 统计指标 -->
+    <g transform="translate(0, 18)">
+      <text x="0" y="16" class="text-body" font-weight="600">🌟 Total Stars: <tspan fill="#f472b6">${totalStars}</tspan></text>
+      <text x="140" y="16" class="text-body" font-weight="600">🌿 Projects: <tspan fill="#c084fc">${repoCount}</tspan></text>
+      <text x="260" y="16" class="text-body">💫 Latest Spark: <tspan fill="#fbcfe8" font-family="JetBrains Mono">${latestSpark}</tspan></text>
+      <text x="540" y="16" class="text-muted" font-size="10.5px">Updated: ${generatedAt} (UTC+8)</text>
+    </g>
+    
+    <g transform="translate(0, 44)">
+      <circle cx="4" cy="4" r="3" fill="#4ade80" />
+      <text x="14" y="8" class="text-muted" font-size="10.5px">All workshop units operating smoothly · Powered by GitHub Actions</text>
+    </g>
+  </g>
+</svg>`.trim();
+}
+
+async function main() {
+  console.log('🌸 Starting Early Winter Atelier SVG Generator for:', USERNAME);
+  
+  const repos = await getRepositories();
+  console.log(`✨ Found ${repos.length} public repositories.`);
+  
+  let totalStars = 0;
+  let totalForks = 0;
+  let latestSpark = 'floral-notepaper';
+  let latestPushedTime = 0;
+
+  for (const repo of repos) {
+    totalStars += repo.stargazerCount || 0;
+    totalForks += repo.forkCount || 0;
+    
+    const timeStr = repo.pushedAt || repo.updatedAt;
+    const pushedTime = timeStr ? new Date(timeStr).getTime() : 0;
+    if (pushedTime > latestPushedTime && repo.name !== USERNAME) {
+      latestPushedTime = pushedTime;
+      latestSpark = repo.name;
+    }
+  }
+
+  const now = new Date();
+  const bjTime = new Date(now.getTime() + 8 * 3600 * 1000);
+  const generatedAt = bjTime.toISOString().replace('T', ' ').substring(0, 16);
+
+  console.log(`📊 Stats: Stars=${totalStars}, Forks=${totalForks}, Repos=${repos.length}, Latest Spark=${latestSpark}`);
+
+  const svgContent = buildSvg({
+    totalStars,
+    totalForks,
+    repoCount: repos.length,
+    latestSpark,
+    generatedAt,
+  });
+
+  const outputDir = path.resolve(__dirname, '../assets');
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  const outputPath = path.join(outputDir, 'atelier-card.svg');
+  fs.writeFileSync(outputPath, svgContent, 'utf-8');
+  console.log('🎉 Successfully rendered Atelier SVG at:', outputPath);
+}
+
+main().catch((err) => {
+  console.error('❌ Generator failed:', err);
+  process.exit(1);
+});
