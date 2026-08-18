@@ -37,6 +37,7 @@ current_journey: "Deepening agent orchestration & context engineering."
 | 项目 | 语言 | 简介 |
 | :--- | :---: | :--- |
 | 🦀 **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | **花笺增强版**：本地 Markdown 笔记、待办聚合、版本历史、每日便笺与双向链接。 |
+| 🤖 **[deepseek-harness-desktop](https://github.com/TheEarlyWinter-DSH/deepseek-harness-desktop)** | `JavaScript` | **DeepSeek Harness 零配置 Windows 桌面发行版**：内置独立 Node 运行时、dsh CLI、插件双自愈引擎、独立分屏浮窗与实时峰谷电价监控。 |
 
 #### 🌿 「智能体工坊」/ HanaAgent Ecosystem & Plugins
 | 项目 | 语言 | 简介 |
