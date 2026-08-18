@@ -57,7 +57,7 @@ current_journey: "Deepening agent orchestration & context engineering."
 | 🌐 **[cloudflare-tunnel-ingress-guide](https://github.com/TheEarlyWinter/cloudflare-tunnel-ingress-guide)** | `Docs` | 通用 Cloudflare Named Tunnel 零信任穿透与智能分流架构指南。 |
 | 🎛️ **[dsh-skill-manager](https://github.com/TheEarlyWinter/dsh-skill-manager)** | `JavaScript` | DeepSeek Harness (dsh) Web GUI 纯技能与 Bundle 管理器。 |
 | 📺 **[bilibili-ai-bot](https://github.com/TheEarlyWinter/bilibili-ai-bot)** | `Python` | 哔哩哔哩 AI 自动化交互与内容处理机器人。 |
-| ⚡ **[sub2api](https://github.com/TheEarlyWinter/sub2api)** | `Go` | 一站式开源中转服务，统一接入主流大模型订阅。 |
+| ⚡ **[sub2api-m37](https://github.com/TheEarlyWinter/sub2api-m37)** | `Go` | 基于 Sub2API 的定制版中转服务，深度适配 Gemini 3.7 Flash 全系列与思考强度参数透传。 |
 
 ---
 

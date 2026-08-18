@@ -248,8 +248,8 @@ function buildSvg(stats) {
         <text x="6" y="15" class="tag-text">origin-mcp</text>
       </g>
       <g transform="translate(108, 142)">
-        <rect width="68" height="22" rx="6" class="tag-bg"/>
-        <text x="6" y="15" class="tag-text">sub2api</text>
+        <rect width="90" height="22" rx="6" class="tag-bg"/>
+        <text x="6" y="15" class="tag-text">sub2api-m37</text>
       </g>
 
       <g transform="translate(16, 196)">
