@@ -42,6 +42,7 @@ current_journey: "Deepening agent orchestration & context engineering."
 #### 🌿 「智能体工坊」/ HanaAgent Ecosystem & Plugins
 | 项目 | 语言 | 简介 |
 | :--- | :---: | :--- |
+| 📑 **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JavaScript` | **可引用双语论文精读工作台**：基于 MinerU 精准解析、PDF.js 原页证据、证据助手、全文搜索、锚定笔记与双语 Markdown 导出。 |
 | 🌟 **[gemini-quota-dashboard](https://github.com/TheEarlyWinter/gemini-quota-dashboard)** | `JavaScript` | Google Gemini 5小时滑动窗口与周配额多账号实时监控看板。 |
 | 📊 **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JavaScript` | HanaAgent Token 用量统计插件：消费明细、模型占比、余额查询与官方账单口径。 |
 | 🎯 **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JavaScript` | HanaAgent 子代理模型选择与智能分流插件。 |
