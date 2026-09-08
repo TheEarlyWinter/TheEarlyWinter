@@ -14,7 +14,7 @@
 
 - **Focus**: AI Agents, Context Engineering, Rust Desktop Apps, Open Ecosystem
 - **Philosophy**: Crafting useful, lightweight, and reliable tools.
-- **Current Journey**: Deepening multi-agent orchestration & practical workflows.
+- **Current Journey**: Building privacy-first desktop workflows with Tauri/Rust, real service health checks, and practical multi-agent tooling.
 
 ---
 
@@ -37,6 +37,7 @@
 #### Desktop & Infrastructure
 | Project | Stack | Description |
 | :--- | :---: | :--- |
+| **[domain-manager](https://github.com/TheEarlyWinter/domain-manager)** | `Tauri/Rust/React` | 私有仓库：Cloudflare DNS 资产管理、真实 HTTPS 健康巡检、Windows 托盘与安全默认工作流 |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地 Markdown 笔记、待办聚合、双向链接与每日便笺 |
 | **[deepseek-harness-desktop](https://github.com/TheEarlyWinter-DSH/deepseek-harness-desktop)** | `JS` | DeepSeek Harness 零配置 Windows 桌面发行版 |
 | **[sub2api-m37](https://github.com/TheEarlyWinter/sub2api-m37)** | `Go` | 定制版中转服务，深度适配 Gemini 3.7 Flash 思考强度透传 |
