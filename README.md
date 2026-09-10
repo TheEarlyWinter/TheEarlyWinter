@@ -38,6 +38,7 @@
 | Project | Stack | Description |
 | :--- | :---: | :--- |
 | **[domain-manager](https://github.com/TheEarlyWinter/domain-manager)** | `Tauri/Rust/React` | 私有仓库：Cloudflare DNS 资产管理、真实 HTTPS 健康巡检、Windows 托盘与安全默认工作流 |
+| **[AIProxy](https://github.com/TheEarlyWinter/AIProxy)** | `Docker/Mihomo/JS` | AI 代理独立隔离部署骨架，支持按地区分组、自动故障转移与多站点健康复核 |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地 Markdown 笔记、待办聚合、双向链接与每日便笺 |
 | **[deepseek-harness-desktop](https://github.com/TheEarlyWinter-DSH/deepseek-harness-desktop)** | `JS` | DeepSeek Harness 零配置 Windows 桌面发行版 |
 | **[sub2api-m37](https://github.com/TheEarlyWinter/sub2api-m37)** | `Go` | 定制版中转服务，深度适配 Gemini 3.7 Flash 思考强度透传 |
