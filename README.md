@@ -24,17 +24,17 @@
 | Project | Stack | Description |
 | :--- | :---: | :--- |
 | **[linux-headless-computer-use](https://github.com/TheEarlyWinter/linux-headless-computer-use)** | `Python` | Linux 无感后台桌面自动化沙箱技能（免抢鼠标硬控 / Xvfb / xdotool） |
-| **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 🌸 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
-| **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 📄 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
-| **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | 📊 HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
-| **[hanako-codex-bridge](https://github.com/TheEarlyWinter/hanako-codex-bridge)** | `JS/MCP` | 🔌 本地 MCP 双向桥接：支持 Hanako 与 Codex 任务跨环境委派与协同 |
-| **[gemini-quota-dashboard](https://github.com/TheEarlyWinter/gemini-quota-dashboard)** | `JS` | ⏱️ Google Gemini 5小时滑动窗口与周配额多账号实时监控看板 |
-| **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JS` | 🎯 子代理模型选择与分流管理插件 |
-| **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | 📈 Origin 科学绘图 MCP 部署与数据分析桥接套件 |
-| **[summary](https://github.com/TheEarlyWinter/summary)** | `Python` | 🧪 化学/化工实验工作总结与 Word 规范自动排版技能 (/summary) |
-| **[chemeng-literature-search](https://github.com/TheEarlyWinter/chemeng-literature-search)** | `Python` | 🔍 化工领域文献检索、证据审计与 DOI 核验 Skill |
-| **[twinkstar-web-access](https://github.com/TheEarlyWinter/twinkstar-web-access)** | `JS` | 🌐 星愿浏览器 (Twinkstar) CDP 接入与自动化交互插件 |
-| **[word-preview](https://github.com/TheEarlyWinter/word-preview)** | `JS` | 📑 轻量级 Word (.docx) 在线卡片式解析与快速预览 |
+| **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
+| **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
+| **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
+| **[hanako-codex-bridge](https://github.com/TheEarlyWinter/hanako-codex-bridge)** | `JS/MCP` | 本地 MCP 双向桥接：支持 Hanako 与 Codex 任务跨环境委派与协同 |
+| **[gemini-quota-dashboard](https://github.com/TheEarlyWinter/gemini-quota-dashboard)** | `JS` | Google Gemini 5小时滑动窗口与周配额多账号实时监控看板 |
+| **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JS` | 子代理模型选择与分流管理插件 |
+| **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | Origin 科学绘图 MCP 部署与数据分析桥接套件 |
+| **[summary](https://github.com/TheEarlyWinter/summary)** | `Python` | 化学/化工实验工作总结与 Word 规范自动排版技能 (/summary) |
+| **[chemeng-literature-search](https://github.com/TheEarlyWinter/chemeng-literature-search)** | `Python` | 化工领域文献检索、证据审计与 DOI 核验 Skill |
+| **[twinkstar-web-access](https://github.com/TheEarlyWinter/twinkstar-web-access)** | `JS` | 星愿浏览器 (Twinkstar) CDP 接入与自动化交互插件 |
+| **[word-preview](https://github.com/TheEarlyWinter/word-preview)** | `JS` | 轻量级 Word (.docx) 在线卡片式解析与快速预览 |
 
 #### Desktop, Infrastructure & Guides
 | Project | Stack | Description | Status |
