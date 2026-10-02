@@ -23,6 +23,7 @@
 #### HanaAgent Ecosystem & Multi-Agent Tooling
 | Project | Stack | Description |
 | :--- | :---: | :--- |
+| **[linux-headless-computer-use](https://github.com/TheEarlyWinter/linux-headless-computer-use)** | `Python` | Linux 无感后台桌面自动化沙箱技能（免抢鼠标硬控 / Xvfb / xdotool） |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 🌸 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
 | **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 📄 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
 | **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | 📊 HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
