@@ -33,18 +33,6 @@
 | **[twinkstar-web-access](https://github.com/TheEarlyWinter/twinkstar-web-access)** | `JS` | 原生 Chromium 与星愿浏览器 CDP 安全接入插件（保留登录态与扩展） |
 | **[word-preview](https://github.com/TheEarlyWinter/word-preview)** | `JS` | 轻量级 Word (.docx) 在线卡片式解析与快速预览 |
 
-#### Desktop, Infrastructure & Archives
-| Project | Stack | Description | Status |
-| :--- | :---: | :--- | :---: |
-| **[domain-manager](https://github.com/TheEarlyWinter/domain-manager)** | `Tauri/Rust/React` | 私有控制台：Cloudflare DNS 资产管理、HTTPS 健康巡检与系统托盘守护 | `Private` |
-| **[usageloop-zh](https://github.com/TheEarlyWinter/usageloop-zh)** | `JS` | Codex 5 小时额度窗口自动调度器（UsageLoop）中文汉化与自适应分流版 | `Public` |
-| **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐插件（已归档） | `Archived` |
-| **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JS` | 子代理模型选择与分流管理插件（已归档） | `Archived` |
-| **[linux-headless-computer-use](https://github.com/TheEarlyWinter/linux-headless-computer-use)** | `Python` | Linux 无感后台桌面自动化沙箱旧探索（已归档，推荐参考 hana-computer-use-linux-guide） | `Archived` |
-| **[sub2api-m37](https://github.com/TheEarlyWinter/sub2api-m37)** | `Go` | 定制版 Sub2API 网关，深度适配 Gemini 3.8/3.7 Flash 思维链感知 | `Archived` |
-| **[hanako-user-manual](https://github.com/TheEarlyWinter/hanako-user-manual)** | `Docs/VitePress` | HanaAgent 中文用户指南与最佳实践手册（含 [Gist 在线阅读](https://gist.github.com/TheEarlyWinter/20f125915ac49406a3d0657b6008a844)） | `Archived` |
-| **[cloudflare-tunnel-ingress-guide](https://github.com/TheEarlyWinter/cloudflare-tunnel-ingress-guide)** | `Docs/Guide` | Cloudflare Zero Trust Named Tunnel 与智能 DNS 免翻架构指南（含 [Gist 在线阅读](https://gist.github.com/TheEarlyWinter/e7e77b4cbad53de0aa6b805a4644df70)） | `Archived` |
-
 ---
 
 ### ✦ Tech Stack
