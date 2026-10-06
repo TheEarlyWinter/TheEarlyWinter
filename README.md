@@ -23,7 +23,7 @@
 #### HanaAgent Ecosystem & Multi-Agent Tooling
 | Project | Stack | Description |
 | :--- | :---: | :--- |
-| **[linux-headless-computer-use](https://github.com/TheEarlyWinter/linux-headless-computer-use)** | `Python` | Linux 无感后台桌面自动化沙箱技能（免抢鼠标硬控 / Xvfb / xdotool） |
+| **[hana-computer-use-linux-guide](https://github.com/TheEarlyWinter/hana-computer-use-linux-guide)** | `Docs/MCP` | Hana 接入 computer-use-linux 实测指南：Wayland 截图排障与 A/B 输入方案 |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
 | **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
 | **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
@@ -39,6 +39,7 @@
 | Project | Stack | Description | Status |
 | :--- | :---: | :--- | :---: |
 | **[domain-manager](https://github.com/TheEarlyWinter/domain-manager)** | `Tauri/Rust/React` | 私有控制台：Cloudflare DNS 资产管理、HTTPS 健康巡检与系统托盘守护 | `Private` |
+| **[linux-headless-computer-use](https://github.com/TheEarlyWinter/linux-headless-computer-use)** | `Python` | Linux 无感后台桌面自动化沙箱旧探索（已归档，推荐参考 hana-computer-use-linux-guide） | `Archived` |
 | **[usageloop-zh](https://github.com/TheEarlyWinter/usageloop-zh)** | `JS` | Codex 5 小时额度窗口自动调度器（UsageLoop）中文汉化与自适应分流版 | `Public` |
 | **[sub2api-m37](https://github.com/TheEarlyWinter/sub2api-m37)** | `Go` | 定制版 Sub2API 网关，深度适配 Gemini 3.8/3.7 Flash 思维链感知 | `Archived` |
 | **[hanako-user-manual](https://github.com/TheEarlyWinter/hanako-user-manual)** | `Docs/VitePress` | HanaAgent 中文用户指南与最佳实践手册（含 [Gist 在线阅读](https://gist.github.com/TheEarlyWinter/20f125915ac49406a3d0657b6008a844)） | `Archived` |
