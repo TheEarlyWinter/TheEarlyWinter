@@ -28,7 +28,6 @@
 | **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
 | **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
 | **[hanako-codex-bridge](https://github.com/TheEarlyWinter/hanako-codex-bridge)** | `JS/MCP` | 本地 MCP 双向桥接：支持 Hanako 与 Codex 任务跨环境委派与协同 |
-| **[gemini-quota-dashboard](https://github.com/TheEarlyWinter/gemini-quota-dashboard)** | `JS` | Google Gemini 5小时滑动窗口与周配额多账号实时监控看板 |
 | **[subagent-model-picker](https://github.com/TheEarlyWinter/subagent-model-picker)** | `JS` | 子代理模型选择与分流管理插件 |
 | **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | Origin 科学绘图 MCP 部署与数据分析桥接套件 |
 | **[summary](https://github.com/TheEarlyWinter/summary)** | `Python` | 化学/化工实验工作总结与 Word 规范自动排版技能 (/summary) |
