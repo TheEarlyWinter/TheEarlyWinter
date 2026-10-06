@@ -26,6 +26,7 @@
 | **[hana-computer-use-linux-guide](https://github.com/TheEarlyWinter/hana-computer-use-linux-guide)** | `Docs/MCP` | Hana 接入 computer-use-linux 实测指南：Wayland 截图排障与 A/B 输入方案 |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
 | **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
+| **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
 | **[hanako-codex-bridge](https://github.com/TheEarlyWinter/hanako-codex-bridge)** | `JS/MCP` | 本地 MCP 双向桥接：支持 Hanako 与 Codex 任务跨环境委派与协同 |
 | **[origin-mcp-transfer-kit](https://github.com/TheEarlyWinter/origin-mcp-transfer-kit)** | `Python` | Origin 科学绘图 MCP 部署与数据分析桥接套件 |
 | **[summary](https://github.com/TheEarlyWinter/summary)** | `Python` | 化学/化工实验工作总结与 Word 规范自动排版技能 (/summary) |
