@@ -25,6 +25,7 @@
 | :--- | :---: | :--- |
 | **[hana-computer-use-linux-guide](https://github.com/TheEarlyWinter/hana-computer-use-linux-guide)** | `Docs/MCP` | Hana 接入 computer-use-linux 实测指南：Wayland 截图排障与 A/B 输入方案 |
 | **[floral-notepaper](https://github.com/TheEarlyWinter/floral-notepaper)** | `Rust` | 本地轻量 Markdown 笔记、待办聚合、双向链接与每日便笺 |
+| **[fork-chat](https://github.com/TheEarlyWinter/fork-chat)** | `JS` | 二维树状分支对话与思维推导工作台（DAG 画布 / 多模型横向推导 / 真实文档交付） |
 | **[hana-paper-reader](https://github.com/TheEarlyWinter/hana-paper-reader)** | `JS` | 可引用双语论文精读工作台（MinerU / PDF.js / 锚定笔记 / 双语导出） |
 | **[token-tracker](https://github.com/TheEarlyWinter/token-tracker)** | `JS` | HanaAgent Token 消耗明细统计、模型占比与账单对齐 |
 | **[hanako-codex-bridge](https://github.com/TheEarlyWinter/hanako-codex-bridge)** | `JS/MCP` | 本地 MCP 双向桥接：支持 Hanako 与 Codex 任务跨环境委派与协同 |
